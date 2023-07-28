@@ -1,79 +1,182 @@
-<!DOCTYPE html>
 <html lang="{{@site.locale}}">
+
 <head>
 
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="{{asset "built/index.css"}}" />
-    <script src="{{asset "built/index.js"}}" defer></script>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="{{asset 'built/index.css'}}" />
+  <script src="{{asset 'built/index.js'}}" defer></script>
 
-    <title>{{meta_title}}</title>
+  <title>{{meta_title}}</title>
 
-    {{ghost_head}}
-    {{!-- Outputs important meta data and settings, should always be in <head> --}}
+  {{ghost_head}}
 
 </head>
-<body class="{{body_class}}">
-<div class="gh-viewport">
 
-<header id="gh-head" class="gh-head">
-    <nav class="gh-head-inner gh-container">
-
-        <div class="gh-head-brand">
-            <a class="gh-head-logo" href="{{@site.url}}">
-                {{#if @site.logo}}
-                    <img src="{{@site.logo}}" alt="{{@site.title}}" />
-                {{else}}
-                    {{@site.title}}
-                {{/if}}
-            </a>
-            <a class="gh-burger" role="button" aria-label="menu">
-                <div class="gh-burger-box">
-                    <div class="gh-burger-inner"></div>
-                </div>
-            </a>
+<body class="bg-green-100">
+  <header>
+    <nav class="bg-green-nav px-4 lg:px-6">
+      <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
+        <a href="{{@site.url}}" class="flex items-center">
+          {{#if @site.logo}}
+          <img src="{{@site.logo}}" class="mr-3 h-full" alt="{{@site.title}}" />
+          {{else}}
+          {{@site.title}}
+          {{/if}}
+        </a>
+        {{navigation type="secondary"}}
+        <div
+          class="hidden justify-between w-full lg:flex lg:w-auto lg:order-1 ml-auto mr-12 [&>*>li]:block [&>*>li]:py-2 [&>*>li]:pr-4 [&>*>li]:pl-3 [&>*>li]:text-gray-dark hover:[&>*>li]:text-blue-300 [&>*>li]:lg:p-0 [&>ul]:flex [&>ul]:flex-col [&>ul]:mt-4 [&>ul]:font-medium [&>ul]:lg:flex-row [&>ul]:lg:space-x-8 [&>ul]:lg:mt-0>"
+          id="mobile-menu-2">
+          {{navigation}}
         </div>
-        <div class="gh-head-menu">
-            {{navigation}}
-        </div>
-        <div class="gh-head-actions">
-            <div class="gh-head-actions-list">
-                {{search}}
-                {{#if @site.members_enabled}}
-                    {{^if @member}}
-                    <a class="gh-button" href="{{@site.signup_url}}">Subscribe</a>
-                    {{else}}
-                    <a class="gh-button" href="#/portal/account">Account</a>
-                    {{/if}}
-                {{/if}}
-            </div>
-        </div>
+      </div>
     </nav>
-</header>
+  </header>
 
-<main class="gh-main">
-
+  <main class="text-gray-500">
     {{{body}}}
-    {{!-- All content gets inserted here, index.hbs, post.hbs, etc --}}
+  </main>
 
-</main>
-
-<footer class="gh-foot">
-    <div class="gh-container">
-        <div class="gh-foot-menu">
-            {{navigation type="secondary"}}
+  <footer class="bg-green-500">
+    <div class="container px-5 py-24 mx-auto">
+      <div class="flex flex-wrap justify-between md:text-left text-center order-first">
+        <a href="{{@site.url}}" class="flex items-center">
+          {{#if @site.logo}}
+          <img src="{{@site.logo}}" class="mr-3 h-full" alt="{{@site.title}}" />
+          {{else}}
+          {{@site.title}}
+          {{/if}}
+        </a>
+        <div class="px-4">
+          <nav class="flex text-xl text-white font-bold list-none gap-20 mb-10">
+            {{navigation}}
+          </nav>
         </div>
-        <div class="gh-foot-meta">
-            Published with <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
+      </div>
+      <div class="mt-16 flex justify-between">
+        <div>
+          <h2 class="text-white text-2xl font-bold">
+            Impostômetro em tempo real
+          </h2>
+          <ul class="bg-green-300 w-fit mt-2 p-2 px-8 rounded text-white font-bold">
+            <li class="inline-block text-xs text-center">
+              <span class="block text-4xl">00</span>
+              Trilhão
+            </li>
+            <li class="inline-block text-xs text-center">
+              <span class="block text-4xl">681</span>
+              Bilhões
+            </li>
+            <li class="inline-block text-xs text-center">
+              <span class="block text-4xl">867</span>
+              Milhões
+            </li>
+            <li class="inline-block text-xs text-center">
+              <span class="block text-4xl">497</span>
+              Mil
+            </li>
+            <li class="inline-block text-xs text-center">
+              <span class="block text-4xl">308</span>
+              Reais
+            </li>
+            <li class="inline-block text-xs text-center">
+              <span class="block text-4xl"> 81</span>
+              Centavos
+            </li>
+          </ul>
+          <h2 class="text-white text-2xl mt-8 font-bold">
+            Pedagiômetro em tempo real
+          </h2>
+          <ul class="bg-green-300 w-fit mt-2 p-2 px-8 rounded text-white font-bold">
+            <li class="inline-block text-xs text-center">
+              <span class="block text-4xl">00</span>
+              Trilhão
+            </li>
+            <li class="inline-block text-xs text-center">
+              <span class="block text-4xl">681</span>
+              Bilhões
+            </li>
+            <li class="inline-block text-xs text-center">
+              <span class="block text-4xl">867</span>
+              Milhões
+            </li>
+            <li class="inline-block text-xs text-center">
+              <span class="block text-4xl">497</span>
+              Mil
+            </li>
+            <li class="inline-block text-xs text-center">
+              <span class="block text-4xl">308</span>
+              Reais
+            </li>
+            <li class="inline-block text-xs text-center">
+              <span class="block text-4xl"> 81</span>
+              Centavos
+            </li>
+          </ul>
         </div>
+        <div class="flex flex-col justify-around">
+          <div>
+            <ul class="text-yellow-300 inline-flex gap-4">
+              <li>
+                <a href="#">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                      d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z">
+                    </path>
+                    <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="currentColor"
+                    stroke="currentColor" stroke-width="0" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="flex items-center gap-4 text-white">
+            <svg xmlns="http://www.w3.org/2000/svg" class="inline w-8 h-8 align-middle" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+            <p class="text-xl">
+              <strong class="text-2xl">52 visitantes</strong>
+              <br />
+              ativos no momento
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
-</footer>
+    <div class="container px-5 py-6 mx-auto flex items-center sm:flex-row flex-col">
+      <p>Copyright ©
+        {{@site.title}},
+        {{date format="YYYY"}}. Todos os direitos reservados.</p>
+    </div>
+  </footer>
 
-</div>
-
-{{!-- <foot> --}}
-{{ghost_foot}}
-{{!-- Outputs important scripts - should always be included before closing body tag --}}
-
+  {{! <foot> }}
+    {{ghost_foot}}
+    {{! Outputs important scripts - should always be included before closing body tag }}
 </body>
+
 </html>
