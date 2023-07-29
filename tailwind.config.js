@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./dist/*.{html,js}"],
+  mode: "jit",
+  content: ["./*.hbs", "./**/*.hbs"],
   theme: {
     extend: {},
     colors: {
@@ -33,6 +34,10 @@ module.exports = {
         500: "#343A40",
       },
     },
+    variants: {
+      extend: {},
+      responsive: ["responsive"],
+    },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/typography")],
 };
