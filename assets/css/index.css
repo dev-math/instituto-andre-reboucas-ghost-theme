@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.partner {
+    flex: 1 1 clamp(100px, 20vw, 208px); /* The element will have a flex value between 1 and 1, with a minimum width of 200px and a maximum of 25vw (25% of viewport width) up to a maximum width of 300px */
+    max-width: 100%; /* Ensure the element doesn't overflow its container */
+    margin-right: clamp(10px, 2vw, 20px); /* Dynamic gap between partner elements, with a minimum gap of 10px and a maximum of 20px */
+    margin-left: clamp(10px, 2vw, 20px);
+    margin-bottom: clamp(10px, 2vw, 20px);
+  }

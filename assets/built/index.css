@@ -588,6 +588,11 @@ video {
   order: -9999;
 }
 
+.mx-10 {
+  margin-left: 2.5rem;
+  margin-right: 2.5rem;
+}
+
 .mx-4 {
   margin-left: 1rem;
   margin-right: 1rem;
@@ -626,31 +631,6 @@ video {
 .my-6 {
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
-}
-
-.mx-0 {
-  margin-left: 0px;
-  margin-right: 0px;
-}
-
-.mx-8 {
-  margin-left: 2rem;
-  margin-right: 2rem;
-}
-
-.mx-10 {
-  margin-left: 2.5rem;
-  margin-right: 2.5rem;
-}
-
-.mx-12 {
-  margin-left: 3rem;
-  margin-right: 3rem;
-}
-
-.mx-20 {
-  margin-left: 5rem;
-  margin-right: 5rem;
 }
 
 .mb-10 {
@@ -765,18 +745,6 @@ video {
   height: 100%;
 }
 
-.h-20 {
-  height: 5rem;
-}
-
-.w-1\/2 {
-  width: 50%;
-}
-
-.w-48 {
-  width: 12rem;
-}
-
 .w-52 {
   width: 13rem;
 }
@@ -800,10 +768,6 @@ video {
 
 .w-full {
   width: 100%;
-}
-
-.w-20 {
-  width: 5rem;
 }
 
 .max-w-max {
@@ -1100,6 +1064,17 @@ video {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.partner {
+  flex: 1 1 clamp(100px, 20vw, 208px);
+  /* The element will have a flex value between 1 and 1, with a minimum width of 200px and a maximum of 25vw (25% of viewport width) up to a maximum width of 300px */
+  max-width: 100%;
+  /* Ensure the element doesn't overflow its container */
+  margin-right: clamp(10px, 2vw, 20px);
+  /* Dynamic gap between partner elements, with a minimum gap of 10px and a maximum of 20px */
+  margin-left: clamp(10px, 2vw, 20px);
+  margin-bottom: clamp(10px, 2vw, 20px);
+}
+
 .hover\:bg-gray-100:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(211 220 230 / var(--tw-bg-opacity));
@@ -1139,21 +1114,6 @@ video {
 }
 
 @media (min-width: 640px) {
-  .sm\:mx-4 {
-    margin-left: 1rem;
-    margin-right: 1rem;
-  }
-
-  .sm\:mx-72 {
-    margin-left: 18rem;
-    margin-right: 18rem;
-  }
-
-  .sm\:my-6 {
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
-  }
-
   .sm\:flex {
     display: flex;
   }
@@ -1162,16 +1122,12 @@ video {
     display: grid;
   }
 
-  .sm\:w-52 {
-    width: 13rem;
+  .sm\:w-1\/2 {
+    width: 50%;
   }
 
   .sm\:w-80 {
     width: 20rem;
-  }
-
-  .sm\:w-1\/2 {
-    width: 50%;
   }
 
   .sm\:grid-cols-2 {
@@ -1186,8 +1142,8 @@ video {
     align-items: flex-start;
   }
 
-  .sm\:justify-between {
-    justify-content: space-between;
+  .sm\:justify-around {
+    justify-content: space-around;
   }
 
   .sm\:gap-20 {
@@ -1196,10 +1152,6 @@ video {
 
   .sm\:gap-4 {
     gap: 1rem;
-  }
-
-  .sm\:gap-10 {
-    gap: 2.5rem;
   }
 
   .sm\:text-left {
@@ -1233,11 +1185,6 @@ video {
 }
 
 @media (min-width: 768px) {
-  .md\:mx-72 {
-    margin-left: 18rem;
-    margin-right: 18rem;
-  }
-
   .md\:text-left {
     text-align: left;
   }
@@ -1252,9 +1199,9 @@ video {
     order: 2;
   }
 
-  .lg\:mx-72 {
-    margin-left: 18rem;
-    margin-right: 18rem;
+  .lg\:mx-64 {
+    margin-left: 16rem;
+    margin-right: 16rem;
   }
 
   .lg\:mt-0 {
