@@ -38,6 +38,9 @@ module.exports = {
       extend: {},
       responsive: ["responsive"],
     },
+    fontFamily: {
+      sans: ["Rubik", "sans-serif"],
+    },
   },
   plugins: [require("@tailwindcss/typography")],
 };
