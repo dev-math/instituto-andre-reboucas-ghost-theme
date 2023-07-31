@@ -1238,6 +1238,10 @@ video {
     width: auto;
   }
 
+  .lg\:w-80 {
+    width: 20rem;
+  }
+
   .lg\:flex-row {
     flex-direction: row;
   }
