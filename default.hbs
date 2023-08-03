@@ -20,22 +20,23 @@
       <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl py-6">
         <a href="{{@site.url}}" class="flex items-center">
           {{#if @site.logo}}
-          <img src="{{@site.logo}}" class="mr-3 h-full" alt="{{@site.title}}" />
+          <img src="{{@site.logo}}" alt="{{@site.title}}" />
           {{else}}
           {{@site.title}}
           {{/if}}
         </a>
         {{navigation type="secondary"}}
         <div
-          class="hidden justify-between w-full lg:flex lg:w-auto lg:order-1 ml-auto mr-12 [&>*>li]:block [&>*>li]:py-2 [&>*>li]:pr-4 [&>*>li]:pl-3 [&>*>li]:text-gray-dark hover:[&>*>li]:text-blue-300 [&>*>li]:lg:p-0 [&>ul]:flex [&>ul]:flex-col [&>ul]:mt-4 [&>ul]:font-medium [&>ul]:lg:flex-row [&>ul]:lg:space-x-8 [&>ul]:lg:mt-0>"
+          class="hidden justify-between items-left w-full lg:flex lg:w-auto lg:order-1 ml-auto mr-12 [&>*>li]:block [&>*>li]:py-2 [&>*>li]:pr-4 [&>*>li]:pl-3 [&>*>li]:text-gray-dark hover:[&>*>li]:text-blue-300 [&>*>li]:lg:p-0 [&>ul]:flex [&>ul]:flex-col [&>ul]:mt-4 [&>ul]:font-medium [&>ul]:lg:flex-row [&>ul]:lg:space-x-8 [&>ul]:lg:mt-0>"
           id="mobile-menu-2" data-visible="false">
           {{navigation}}
         </div>
+        
       </div>
     </nav>
   </header>
 
-  <main class="text-gray-500 lg:mx-64">
+  <main class="text-gray-500 mx-10 md:body-margin">
     {{{body}}}
   </main>
 

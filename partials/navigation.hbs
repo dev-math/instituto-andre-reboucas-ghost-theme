@@ -1,7 +1,7 @@
 {{#if isSecondary}}
 <div class="flex items-center lg:order-2">
   {{#foreach navigation}}
-  <a class="text-black bg-red-300 font-bold hover:bg-red-500 focus:ring-4 focus:ring-primary-300 rounded-lg px-4 lg:px-5 py-2 lg:py-2.5 mr-2 focus:outline-none" href="{{url absolute=" true"}}">
+  <a class="sm:text-md  text-black bg-red-300 font-bold hover:bg-red-500 focus:ring-4 focus:ring-primary-300 rounded-lg px-4 lg:px-5 py-2 lg:py-2.5 mr-2 focus:outline-none" href="{{url absolute=" true"}}">
     {{label}}
   </a>
   {{/foreach}}
@@ -24,7 +24,7 @@
 {{else}}
 <ul class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0" role="menu">
   {{#foreach navigation}}
-  <li role="menuitem">
+  <li class="ml-auto" role="menuitem">
     <a href="{{url absolute=" true"}}" {{#if current}}aria-current="page" {{/if}}>{{label}}</a>
   </li>
   {{/foreach}}

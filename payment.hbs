@@ -1,0 +1,25 @@
+{{!< default}}
+<section class="flex flex-col my-16 mx-10">
+    <h1 class="text-4xl md:text-5xl font-bold text-center md:text-left">Doação</h1>
+    <hr class="bg-black mt-6 h-[2px] md:h-[3px] w-full" />
+</section>
+<section class="flex flex-col md:flex-row my-10 justify-between items-center">
+    <div class="md:mr-20 items-center justify-center">
+        <h2 class="text-2xl md:text-3xl font-medium text-center md:text-left">Quanto você deseja doar?</h2>
+        <h2 class="text-lg my-2 text-center md:text-left">Sua ação pode fazer toda a diferença, contribua com o instituto! </h2>
+        <div class="flex mt-12 justify-center md:justify-start">
+            <img class="w-auto h-12 md:h-16" src="{{asset 'img/banco-do-brasil-3.svg'}}" alt="Banco do Brasil">
+            <img class="w-auto h-12 md:h-16" src="{{asset 'img/payment.png'}}" alt="Outros métodos">
+        </div>
+        <div class="flex items-center justify-center gap-6">
+            <input type="number" min="5" step="0.01" name="quantidade" class="rounded-md block w-full text-xl px-4 py-2" placeholder="Insira a quantidade">
+            <button href="#"
+                class="text-black text-lg bg-red-300 font-bold hover:bg-red-500 focus:ring-4 focus:ring-primary-300 rounded-lg px-8 py-2 focus:outline-none my-4">
+                Doar
+            </button>
+        </div>
+    </div>
+    <div class="my-6 sm:my-0 w-full lg:w-1/2">
+        <img class="w-auto h-auto rounded-lg" src="{{asset 'img/doacao.jpg'}}" alt="Instituto André Rebouças" />
+    </div>
+</section>

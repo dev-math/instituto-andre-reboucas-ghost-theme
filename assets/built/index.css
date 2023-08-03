@@ -593,24 +593,24 @@ video {
   margin-right: 2.5rem;
 }
 
-.mx-4 {
-  margin-left: 1rem;
-  margin-right: 1rem;
-}
-
-.mx-72 {
-  margin-left: 18rem;
-  margin-right: 18rem;
-}
-
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
 }
 
+.my-10 {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
 .my-16 {
   margin-top: 4rem;
   margin-bottom: 4rem;
+}
+
+.my-2 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .my-20 {
@@ -665,6 +665,10 @@ video {
   margin-right: 0.75rem;
 }
 
+.mt-12 {
+  margin-top: 3rem;
+}
+
 .mt-16 {
   margin-top: 4rem;
 }
@@ -713,6 +717,10 @@ video {
   display: none;
 }
 
+.h-12 {
+  height: 3rem;
+}
+
 .h-48 {
   height: 12rem;
 }
@@ -731,10 +739,6 @@ video {
 
 .h-\[2px\] {
   height: 2px;
-}
-
-.h-\[3px\] {
-  height: 3px;
 }
 
 .h-auto {
@@ -770,11 +774,6 @@ video {
   width: 100%;
 }
 
-.max-w-max {
-  max-width: -moz-max-content;
-  max-width: max-content;
-}
-
 .max-w-screen-xl {
   max-width: 1280px;
 }
@@ -791,6 +790,10 @@ video {
 
 .list-none {
   list-style-type: none;
+}
+
+.grid-cols-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
 }
 
 .grid-cols-2 {
@@ -847,6 +850,14 @@ video {
 
 .gap-8 {
   gap: 2rem;
+}
+
+.gap-40 {
+  gap: 10rem;
+}
+
+.gap-60 {
+  gap: 15rem;
 }
 
 .rounded {
@@ -968,6 +979,10 @@ video {
   padding-bottom: 1.5rem;
 }
 
+.text-left {
+  text-align: left;
+}
+
 .text-center {
   text-align: center;
 }
@@ -989,11 +1004,6 @@ video {
 .text-4xl {
   font-size: 2.25rem;
   line-height: 2.5rem;
-}
-
-.text-5xl {
-  font-size: 3rem;
-  line-height: 1;
 }
 
 .text-lg {
@@ -1071,12 +1081,10 @@ video {
 }
 
 .partner {
-  flex: 1 1 clamp(100px, 20vw, 208px);
-  /* The element will have a flex value between 1 and 1, with a minimum width of 200px and a maximum of 25vw (25% of viewport width) up to a maximum width of 300px */
+  flex: 1 1 clamp(100px, 20vw, 108px);
+  /* width: min(200px, 400px); */
   max-width: 100%;
-  /* Ensure the element doesn't overflow its container */
   margin-right: clamp(10px, 2vw, 20px);
-  /* Dynamic gap between partner elements, with a minimum gap of 10px and a maximum of 20px */
   margin-left: clamp(10px, 2vw, 20px);
   margin-bottom: clamp(10px, 2vw, 20px);
 }
@@ -1120,6 +1128,11 @@ video {
 }
 
 @media (min-width: 640px) {
+  .sm\:my-0 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
   .sm\:flex {
     display: flex;
   }
@@ -1165,11 +1178,6 @@ video {
     line-height: 2.5rem;
   }
 
-  .sm\:text-5xl {
-    font-size: 3rem;
-    line-height: 1;
-  }
-
   .sm\:text-base {
     font-size: 1rem;
     line-height: 1.5rem;
@@ -1187,17 +1195,58 @@ video {
 }
 
 @media (min-width: 768px) {
+  .md\:mr-20 {
+    margin-right: 5rem;
+  }
+
+  .md\:h-16 {
+    height: 4rem;
+  }
+
+  .md\:h-\[3px\] {
+    height: 3px;
+  }
+
   .md\:flex-row {
     flex-direction: row;
+  }
+
+  .md\:justify-start {
+    justify-content: flex-start;
   }
 
   .md\:text-left {
     text-align: left;
   }
 
+  .md\:text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+
   .md\:text-4xl {
     font-size: 2.25rem;
     line-height: 2.5rem;
+  }
+
+  .md\:text-5xl {
+    font-size: 3rem;
+    line-height: 1;
+  }
+
+  .md\:text-base {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .md\:text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+
+  .md\:body-margin {
+    width: min(70%, 2000px);
+    margin-inline: auto;
   }
 }
 
@@ -1208,11 +1257,6 @@ video {
 
   .lg\:order-2 {
     order: 2;
-  }
-
-  .lg\:mx-64 {
-    margin-left: 16rem;
-    margin-right: 16rem;
   }
 
   .lg\:mt-0 {
@@ -1227,8 +1271,16 @@ video {
     display: none;
   }
 
+  .lg\:w-1\/2 {
+    width: 50%;
+  }
+
   .lg\:w-auto {
     width: auto;
+  }
+
+  .lg\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .lg\:flex-row {

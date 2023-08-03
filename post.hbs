@@ -78,11 +78,13 @@
 </article>
 
 <aside class="gh-readmore">
-    <div class="gh-readmore-inner gh-container">
-        <div class="gh-readmore-next">
-            {{#next_post}}<a href="{{url}}">{{> "icons/arrow-left"}} <h4>{{title}}</h4></a>{{/next_post}}
+    <div class="gh-readmore-inner gh-container flex justify-between">
+        <div class="gh-readmore-next w-6">
+            {{#next_post}}<a href="{{url}}"> 
+                <h4>{{title}}</h4> {{> "icons/arrow-left"}} 
+            </a>{{/next_post}}
         </div>
-        <div class="gh-readmore-prev">
+        <div class="gh-readmore-prev w-6">
             {{#prev_post}}<a href="{{url}}">
                 <h4>{{title}}</h4> {{> "icons/arrow-right"}}
             </a>{{/prev_post}}
