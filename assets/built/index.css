@@ -812,10 +812,6 @@ video {
   place-content: center;
 }
 
-.items-start {
-  align-items: flex-start;
-}
-
 .items-center {
   align-items: center;
 }
@@ -850,14 +846,6 @@ video {
 
 .gap-8 {
   gap: 2rem;
-}
-
-.gap-40 {
-  gap: 10rem;
-}
-
-.gap-60 {
-  gap: 15rem;
 }
 
 .rounded {
@@ -977,10 +965,6 @@ video {
 .py-6 {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
-}
-
-.text-left {
-  text-align: left;
 }
 
 .text-center {

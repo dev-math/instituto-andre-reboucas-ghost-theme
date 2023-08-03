@@ -85,5 +85,8 @@
             }
         }
     },
-    "type": "module"
+    "type": "module",
+    "dependencies": {
+        "firebase": "^8.10.1"
+    }
 }

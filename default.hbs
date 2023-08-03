@@ -9,7 +9,8 @@
   <script src="{{asset 'built/index.js'}}" defer></script>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap"/>
   <title>{{meta_title}}</title>
-
+  {{!-- <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-database.js"></script> --}}
   {{ghost_head}}
 
 </head>
@@ -148,11 +149,9 @@
               <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
               <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
             </svg>
-            <p class="text-xl">
-              <strong class="text-2xl">52 visitantes</strong>
-              <br />
-              ativos no momento
-            </p>
+            <p id="view_count_text" class="text-xl"> </p>visitantes{{!-- contador de visitantes --}}
+            <br/>
+            <p>ativos no momento</p>
           </div>
         </div>
       </div>
@@ -163,6 +162,55 @@
         {{date format="YYYY"}}. Todos os direitos reservados.</p>
     </div>
   </footer>
+
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "firebase/app";
+    import { getAnalytics } from "firebase/analytics";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyBbModwIpV6FV4d8--EM6MtNLIJrXnrMRc",
+      authDomain: "andre-reboucas.firebaseapp.com",
+      databaseURL: "https://andre-reboucas-default-rtdb.firebaseio.com",
+      projectId: "andre-reboucas",
+      storageBucket: "andre-reboucas.appspot.com",
+      messagingSenderId: "236357376375",
+      appId: "1:236357376375:web:f34c257a6e64c9af326972",
+      measurementId: "G-WMEPY8Q6WL"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+  </script>
+  <script>
+    function get_viewers_ip(json) {
+      viewers_ip = json.ip;
+      count_view(viewers_ip);
+    }
+
+    function count_view(viewers_ip) {
+      var views;
+      var ip_to_string = viewers_ip.toString();
+
+      for (var i = 0; i < ip_to_string.length; i++) {
+        ip_to_string = ip_to_string.replace(".", "-");
+      }
+
+      firebase.database().ref().child("page_views/" + ip_to_string).set({
+        viewers_ip: viewers_ip,
+      });
+      firebase.database().ref().child("page_views/").on("value", function(snapshot){
+        views = snapshot.numChildren();
+        document.getElementById("view_count_text").innerHTML = views;
+      });
+    }
+  </script>
+  <script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=get_viewers_ip"></script>
 
   {{! <foot> }}
     {{ghost_foot}}
