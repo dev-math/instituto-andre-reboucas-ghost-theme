@@ -1,6 +1,7 @@
 routes:
   /about/: about
   /payment/: payment
+  /noticias/: noticias
 
 collections:
   /:

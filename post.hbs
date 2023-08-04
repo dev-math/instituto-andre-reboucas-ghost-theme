@@ -5,15 +5,16 @@
 <article class="gh-article {{post_class}}">
 
     <header class="gh-header gh-canvas">
-        <span class="gh-post-meta"><time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time> <span class="bull">&bull;</span> {{reading_time}}</span>
-        <h1 class="gh-title">{{title}}</h1>
+        <h1 class="gh-title text-4xl sm:text-5xl mt-16 mb-2 font-bold w-">{{title}}</h1>
+        <span class="gh-post-meta mb-10 text-md sm:text-lg"><time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time> <span class="bull">&bull;</span> {{reading_time}}</span>
+        <hr class="mt-6">
 
         {{#if custom_excerpt}}
         <p class="gh-excerpt">{{custom_excerpt}}</p>
         {{/if}}
 
         {{#if feature_image}}
-        <figure class="gh-feature-image">
+        <figure class="gh-feature-image flex flex-col items-center my-6 sm:my-10">
             <picture>
               <source 
                 srcset="
@@ -51,20 +52,20 @@
               >
             </picture>
             {{#if feature_image_caption}}
-                <figcaption>{{feature_image_caption}}</figcaption>
+                <figcaption class="text-sm sm:text-md mt-4">{{feature_image_caption}}</figcaption>
             {{/if}}
         </figure>
         {{/if}}
     </header>
 
-    <div class="gh-content gh-canvas">
+    <div class="gh-content gh-canvas m-auto my-10 sm:my-16 text-lg sm:text-xl sm:w-[85%] justify-center">
         {{content}}
     </div>
 
-    <footer class="gh-footer gh-canvas">
+    <footer class="gh-footer gh-canvas my-6">
 
         <div class="gh-post-authors">
-            Written by {{#foreach authors}}<a href="{{url}}">{{name}}</a>{{/foreach}}
+            Escrito por {{#foreach authors}}<a href="{{url}}">{{name}}</a>{{/foreach}}
         </div>
 
         {{#if comments}}
@@ -72,22 +73,32 @@
             {{comments}}
         </section>
         {{/if}}
-
+        
     </footer>
 
 </article>
 
-<aside class="gh-readmore">
-    <div class="gh-readmore-inner gh-container flex justify-between">
-        <div class="gh-readmore-next w-6">
-            {{#next_post}}<a href="{{url}}"> 
-                <h4>{{title}}</h4> {{> "icons/arrow-left"}} 
-            </a>{{/next_post}}
+<aside class="gh-readmore my-10">
+    <div class="gh-readmore-inner gh-container flex flex-row justify-between">
+        <div class="gh-readmore-next max-w-[25%] md:max-w-[35%]">
+            {{#next_post}}
+                <a href="{{url}}" class="mr-auto "> 
+                    <h4 class="font-medium truncate text-left mb-4">{{title}}</h4> 
+                    <div class="w-6 mr-auto">
+                        {{> "icons/arrow-left"}}
+                    </div>
+                </a>
+            {{/next_post}}
         </div>
-        <div class="gh-readmore-prev w-6">
-            {{#prev_post}}<a href="{{url}}">
-                <h4>{{title}}</h4> {{> "icons/arrow-right"}}
-            </a>{{/prev_post}}
+        <div class="gh-readmore-prev max-w-[25%] md:max-w-[35%]">
+            {{#prev_post}}
+                <a href="{{url}}" class="ml-auto">
+                    <h4 class="font-medium truncate text-right mb-4">{{title}}</h4> 
+                    <div class="w-6 ml-auto">
+                        {{> "icons/arrow-right"}}
+                    </div>
+                </a>
+            {{/prev_post}}
         </div>
     </div>
 </aside>
