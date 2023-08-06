@@ -1,7 +1,9 @@
 routes:
   /about/: about
   /payment/: payment
-  /noticias/: noticias
+  /noticias/:
+    controller: channel
+    template: noticias
 
 collections:
   /:
