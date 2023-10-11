@@ -1,0 +1,9 @@
+<nav class="pagination" role="navigation">
+    {{#if prev}}
+        <a class="px-4" href="{{page_url prev}}">&larr; Notícias recentes</a>
+    {{/if}}
+    <span class="page-number">Página {{page}} de {{pages}}</span>
+    {{#if next}}
+        <a class="px-4" href="{{page_url next}}">Notícias antigas &rarr;</a>
+    {{/if}}
+</nav>

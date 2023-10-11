@@ -1,1 +1,69 @@
 {{!< default}}
+
+<main>
+  <header class="my-4">
+    <h1 class="text-3xl md:text-5xl font-bold text-center">Notícias</h1>
+  </header>
+
+  <section>
+  <ul class="flex flex-col md:grid grid-flow-col [&>*:nth-child(4n+1)]:col-start-1 gap-8 mt-6 sm:gap-4 place-content-center">
+      {{#foreach posts}}
+        <li class="flex flex-col md:flex-row  bg-yellow-300 p-6 gap-6 rounded-lg shadow-md hover:shadow-lg hover:bg-yellow-500">
+
+          {{#if feature_image}}
+            <img
+              class="max-w-[10em]"
+              src="{{img_url feature_image}}"
+              alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
+              loading="lazy"
+            />
+          {{/if}}
+          <div>
+            <h3 class="text-2xl sm:text-4xl font-bold">{{name}}</h3>
+            <p>{{title}}</p>
+            <a href="{{url}}" class="flex items-center mt-4">
+              <span class="text-sm sm:text-lg pr-2">Ver notícia</span>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+              </svg>
+            </a>
+          </div>
+        </li>
+      {{/foreach}}
+    </ul>
+  </section>
+
+  <footer class="my-4">
+    {{pagination}}
+  </footer>
+</main>
+
+<!-- <div class="container"> -->
+<!--   <h1 class="archive-title">{{t "Archive"}}</h1> -->
+<!--   <div class="archive-description"> -->
+<!--     {{#get "posts"}} -->
+<!--       {{t "A collection of {total} posts." total=pagination.total}} -->
+<!--     {{/get}} -->
+<!--   </div> -->
+<!--  -->
+<!--   <div class="content"> -->
+<!--     <div class="archive js-post-feed"> -->
+<!--       {{#foreach posts}} -->
+<!--         <div class="archive-post-wrap post-year-{{date format="Y"}}"> -->
+<!--           <div class="archive-post-label m-t m-b-sm fw-600">{{date format="YYYY"}}</div> -->
+<!--           <article class="archive-post"> -->
+<!--             <time datetime="{{date published_at format="YYYY-MM-DD"}}" -->
+<!--               class="text-acc-3">{{date published_at format="DD MMM YYYY"}} -->
+<!--             </time> -->
+<!--  -->
+<!--             <h2 class="archive-post-title"> -->
+<!--               <a class="archive-post-link" href="{{url}}">{{title}}</a> -->
+<!--             </h2> -->
+<!--           </article> -->
+<!--         </div> -->
+<!--       {{/foreach}} -->
+<!--     </div> -->
+<!--     {{!-- Pagination --}} -->
+<!--     {{pagination}} -->
+<!--   </div> -->
+<!-- </div> -->
