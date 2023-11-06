@@ -5,7 +5,6 @@
 @layer utilities {
   .partner {
     flex: 1 1 clamp(100px, 20vw, 108px);
-    /* width: min(200px, 400px); */
     max-width: 100%; 
     margin-right: clamp(10px, 2vw, 20px); 
     margin-left: clamp(10px, 2vw, 20px);
