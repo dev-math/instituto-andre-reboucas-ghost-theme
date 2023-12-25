@@ -762,6 +762,10 @@ video {
   height: 100%;
 }
 
+.h-screen {
+  height: 100vh;
+}
+
 .w-52 {
   width: 13rem;
 }
@@ -797,6 +801,10 @@ video {
 
 .max-w-screen-xl {
   max-width: 1280px;
+}
+
+.flex-grow {
+  flex-grow: 1;
 }
 
 .transform {
